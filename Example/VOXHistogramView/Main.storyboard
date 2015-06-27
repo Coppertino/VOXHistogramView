@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g78-Dc-iKc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="BS0-DU-wla">
+            <objects>
+                <tableViewController id="oVb-O1-WDF" customClass="VOXTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3HX-ce-wJc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="J76-Qz-J49">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="M8K-NS-ccj" style="IBUITableViewCellStyleDefault" id="QXk-tG-nXC">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QXk-tG-nXC" id="Ezs-cY-G8u">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="HistogramView only" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M8K-NS-ccj">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="push" id="bTY-gR-mnG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="tju-4b-uQp" style="IBUITableViewCellStyleDefault" id="tIE-U6-3mL">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tIE-U6-3mL" id="oim-hJ-FXK">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="HistogramView with ControlView" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tju-4b-uQp">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="S5b-nb-jlx" kind="push" id="TXc-CR-FDK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="oVb-O1-WDF" id="Fnp-rH-pzM"/>
+                            <outlet property="delegate" destination="oVb-O1-WDF" id="5a7-QT-4wq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sN7-fK-p4r"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HL1-eP-b7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="296" y="366"/>
+        </scene>
+        <!--Simple Histogram View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="VOXSimpleHistogramViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-rY-Sub">
+                                <rect key="frame" x="60" y="234" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4xq-hv-4HA"/>
+                                    <constraint firstAttribute="width" constant="200" id="NC6-7i-cFn"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Src-zv-C5N"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a73-pI-Ieo" customClass="VOXHistogramView">
+                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fVx-gV-aqd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="completeColor">
+                                        <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="notCompleteColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="downloadedColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a73-pI-Ieo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="1rZ-Fd-2w4"/>
+                            <constraint firstAttribute="trailing" secondItem="a73-pI-Ieo" secondAttribute="trailing" id="A9a-PE-PrE"/>
+                            <constraint firstAttribute="centerX" secondItem="5Xk-rY-Sub" secondAttribute="centerX" id="Clf-q0-iM3"/>
+                            <constraint firstAttribute="bottom" secondItem="a73-pI-Ieo" secondAttribute="bottom" id="lm7-wV-gA2"/>
+                            <constraint firstAttribute="centerY" secondItem="5Xk-rY-Sub" secondAttribute="centerY" id="y8x-9i-qPy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ul4-XM-oKo"/>
+                    <connections>
+                        <outlet property="histogramView" destination="a73-pI-Ieo" id="1gE-yF-Elf"/>
+                        <outlet property="playButton" destination="5Xk-rY-Sub" id="p2O-95-oHe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="366"/>
+        </scene>
+        <!--Control Histogram View Controller-->
+        <scene sceneID="VIS-CV-AcH">
+            <objects>
+                <viewController id="S5b-nb-jlx" customClass="VOXControlHistogramViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lWg-nj-TcI"/>
+                        <viewControllerLayoutGuide type="bottom" id="4QM-VW-4Hk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wzy-V5-5zp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dM-Qn-bE9">
+                                <rect key="frame" x="60" y="234" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IX0-zK-IAX"/>
+                                    <constraint firstAttribute="width" constant="200" id="Naq-xg-cDS"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonTap:" destination="S5b-nb-jlx" eventType="touchUpInside" id="STs-r6-Lam"/>
+                                    <action selector="playButtonTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vhq-hq-cYe"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH5-rm-hIB" customClass="VOXHistogramControlView">
+                                <rect key="frame" x="0.0" y="468" width="320" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="fgl-LL-pCG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="peakWidth">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="completeColor">
+                                        <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="notCompleteColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="downloadedColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="histogramHeight">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sliderHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scrubbing speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pko-nc-vNR">
+                                <rect key="frame" x="0.0" y="397" width="320" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zYk-6s-SxV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4QM-VW-4Hk" firstAttribute="top" secondItem="eH5-rm-hIB" secondAttribute="bottom" id="Abc-DD-Xpg"/>
+                            <constraint firstAttribute="centerX" secondItem="6dM-Qn-bE9" secondAttribute="centerX" id="FkH-Ae-X0V"/>
+                            <constraint firstItem="eH5-rm-hIB" firstAttribute="top" secondItem="pko-nc-vNR" secondAttribute="bottom" constant="50" id="JCk-br-UPQ"/>
+                            <constraint firstItem="pko-nc-vNR" firstAttribute="leading" secondItem="Wzy-V5-5zp" secondAttribute="leading" id="Mnv-V7-XCC"/>
+                            <constraint firstAttribute="centerY" secondItem="6dM-Qn-bE9" secondAttribute="centerY" id="VkH-zc-94I"/>
+                            <constraint firstAttribute="trailing" secondItem="eH5-rm-hIB" secondAttribute="trailing" id="eIb-ez-gFe"/>
+                            <constraint firstAttribute="trailing" secondItem="pko-nc-vNR" secondAttribute="trailing" id="oUs-jv-wRe"/>
+                            <constraint firstItem="eH5-rm-hIB" firstAttribute="leading" secondItem="Wzy-V5-5zp" secondAttribute="leading" id="osp-5R-t7V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iWU-3W-ZYy"/>
+                    <connections>
+                        <outlet property="histogramControlView" destination="eH5-rm-hIB" id="Yu4-fg-OZH"/>
+                        <outlet property="playButton" destination="6dM-Qn-bE9" id="omu-5J-Cjh"/>
+                        <outlet property="scrubbingSpeedLabel" destination="pko-nc-vNR" id="mcN-KV-mTn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydl-98-1OH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="1083"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j1p-yL-Xec">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g78-Dc-iKc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQp-Eg-ke7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oVb-O1-WDF" kind="relationship" relationship="rootViewController" id="9DM-fy-ZMD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVG-4S-fVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="366"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
