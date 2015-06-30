@@ -1,15 +1,17 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
 language: objective-c
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
-install:
+before_install:
+- brew install xctool
+- export LANG=en_US.UTF-8
 - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+- gem install cocoapods
+- cd Example
+- pod install
 script:
-- set -o pipefail && xcodebuild test -workspace Example/VOXHistogramView.xcworkspace -scheme VOXHistogramView-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
-- pod lib lint --quick
+- xctool test -workspace VOXHistogramView.xcworkspace -scheme VOXHistogramView-Example -sdk iphonesimulator
+  ONLY_ACTIVE_ARCH=NO
+notifications:
+  email:
+    recipients:
+    - hawk.ukr@gmail.com
+    on_success: change
+    on_failure: always
