@@ -33,7 +33,7 @@ CGRect frame = /* Build frame… */
 VOXHistogramControlView *histogramControlView = [[VOXHistogramControlView alloc] initWithFrame:frame];
 histogramControlView.delegate = self;
 
-NSArray *levels = /* Get levels from API or from player… */
+NSArray *levels = /* Get levels from API or from player. It should be NSArray of NSNumbers from @0.0 to @1.0. */
 histogramControlView.levels = levels;
 ```
 
@@ -65,7 +65,7 @@ VOXHistogramRenderingConfiguration *renderingConfiguration = /* Setup rendering 
 
 VOXHistogramRenderer *renderer = [VOXHistogramRenderer rendererWithRenderingConfiguration:renderingConfiguration];
 
-NSArray *levels = /* Get levels from API or from player… */
+NSArray *levels = /* Get levels from API or from player. It should be NSArray of NSNumbers from @0.0 to @1.0. */
 
 [renderer renderHistogramWithLevels:levels completion:^(UIImage *image) {
     /* Use histogram image */
