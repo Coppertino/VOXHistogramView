@@ -4,7 +4,7 @@
 
 This software is used in our [VOX Player](https://itunes.apple.com/us/app/vox-player/id916215494).
 
-/* Here is the place for beatiful GIF */
+![Demo](https://github.com/Coppertino/VOXHistogramView/blob/master/Gif/demo.gif "Demo")
 
 
 ## Usage
