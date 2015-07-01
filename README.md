@@ -1,4 +1,4 @@
-#VOXHistogramView [![Build Status](https://travis-ci.org/Coppertino/VOXHistogramView.svg?branch=master)](https://travis-ci.org/Coppertino/VOXHistogramView) [![Version](https://img.shields.io/badge/version-0.1.0-cacaca.svg)](https://github.com/Coppertino/VOXHistogramView) [![Platform](https://img.shields.io/badge/platform-ios-blue.svg)](https://github.com/Coppertino/VOXHistogramView)
+#VOXHistogramView [![Build Status](https://travis-ci.org/Coppertino/VOXHistogramView.svg?branch=master)](https://travis-ci.org/Coppertino/VOXHistogramView) [![Version](https://img.shields.io/badge/version-0.1.0-cacaca.svg)](https://github.com/Coppertino/VOXHistogramView) [![Platform](https://img.shields.io/badge/platform-ios-blue.svg)](https://github.com/Coppertino/VOXHistogramView) [![Coverage Status](https://coveralls.io/repos/Coppertino/VOXHistogramView/badge.svg)](https://coveralls.io/r/Coppertino/VOXHistogramView)
 
 **The best way to display histogram in your project. Free Software, Hell Yeah!**
 
