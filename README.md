@@ -39,7 +39,7 @@ histogramControlView.levels = levels;
 
 ####2. Plain VOXHistogramView.
 
-If VOXHistogramControlView do not suits your needs you can use all components separately. 
+If VOXHistogramControlView doesn't suit your needs you can use all components separately. 
 
 Lets describe them:
 
