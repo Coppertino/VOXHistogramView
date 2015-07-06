@@ -94,7 +94,7 @@
 
     /* Convert levels array to sampling rate and render histogram image */
     [converter calculateLevelsForSamplingRate:samplingRate completion:^(NSArray *levelsResampled) {
-        [renderer renderHistogramWithLevels:levelsResampled completion:^(UIImage *image) {\
+        [renderer renderHistogramWithLevels:levelsResampled completion:^(UIImage *image) {
             self.histogramView.image = image;
         }];
     }];
@@ -107,7 +107,6 @@
 {
     [self.playerWrapper cleanUp];
 }
-
 
 #pragma mark - Actions
 

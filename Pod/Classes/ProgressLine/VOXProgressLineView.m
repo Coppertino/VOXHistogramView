@@ -34,12 +34,35 @@
 @property(nonatomic, assign) CGFloat playbackProgress;
 @property(nonatomic, assign) CGFloat downloadProgress;
 
+@property(nonatomic, weak) UIView *completeView;
+@property(nonatomic, weak) UIView *notCompleteView;
+@property(nonatomic, weak) UIView *downloadedView;
 @end
 
 
 
 @implementation VOXProgressLineView
 
+
+#pragma mark - Accessors
+
+- (void)setCompleteColor:(UIColor *)completeColor
+{
+    _completeColor = completeColor;
+    self.completeView.backgroundColor = completeColor;
+}
+
+- (void)setNotCompleteColor:(UIColor *)notCompleteColor
+{
+    _notCompleteColor = notCompleteColor;
+    self.notCompleteView.backgroundColor = notCompleteColor;
+}
+
+- (void)setDownloadedColor:(UIColor *)downloadedColor
+{
+    _downloadedColor = downloadedColor;
+    self.downloadedView.backgroundColor = downloadedColor;
+}
 
 #pragma mark - Init
 
@@ -61,17 +84,47 @@
     return self;
 }
 
+- (instancetype)init
+{
+    return [self initWithFrame:CGRectZero];
+}
+
+#pragma mark - Layout
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    self.notCompleteView.frame = self.bounds;
+    self.completeView.frame = (CGRect) {
+            .origin = CGPointZero,
+            .size.width = CGRectGetWidth(self.bounds) * self.playbackProgress,
+            .size.height = CGRectGetHeight(self.bounds)
+    };
+    self.downloadedView.frame = (CGRect) {
+            .origin = CGPointZero,
+            .size.width = CGRectGetWidth(self.bounds) * self.downloadProgress,
+            .size.height = CGRectGetHeight(self.bounds)
+    };
+}
+
 #pragma mark - Setup
 
 - (void)setup
 {
-    // default colors for debugging
-    self.notCompleteColor = [UIColor greenColor];
-    self.completeColor = [UIColor redColor];
-    self.downloadedColor = [UIColor yellowColor];
+    // build view hierarchy
+    self.notCompleteView = [self _buildView];
+    self.downloadedView = [self _buildView];
+    self.completeView = [self _buildView];
+}
 
-    // background should be clear
-    self.backgroundColor = [UIColor clearColor];
+- (UIView *)_buildView
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+    view.clipsToBounds = YES;
+    view.contentMode = UIViewContentModeLeft;
+    [self addSubview:view];
+    return view;
 }
 
 #pragma mark - Public
@@ -79,95 +132,13 @@
 - (void)updatePlaybackProgress:(CGFloat)playbackProgress
 {
     self.playbackProgress = [self _normalizedValue:playbackProgress];
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)updateDownloadProgress:(CGFloat)downloadProgress
 {
     self.downloadProgress = [self _normalizedDownloadProgressValue:downloadProgress];
-    [self setNeedsDisplay];
-}
-
-#pragma mark - Drawing
-
-- (void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
-
-    /* Taking graphic context */
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    /* Please, no antialiasing */
-    CGContextSetShouldAntialias(context, NO);
-
-    // Setting line width
-    CGContextSetLineWidth(context, rect.size.height);
-
-    // calculate slider line Y position
-    CGFloat yPosition = rect.size.height / 2;
-
-    // get current rect width
-    CGFloat rectWidth = rect.size.width;
-
-
-
-    /* Drawing complete part of slider */
-
-    // setting line color
-    CGContextSetStrokeColorWithColor(context, self.completeColor.CGColor);
-
-    // start to draw line from left
-    CGContextMoveToPoint(context, 0, yPosition);
-
-    // calculating line width for current cursor position
-    CGFloat lineWidth = self.playbackProgress * rectWidth;
-
-    // drawing line with calculated width
-    CGContextAddLineToPoint(context, lineWidth, yPosition);
-
-    // draw stroke
-    CGContextStrokePath(context);
-
-
-
-    /* Drawing downloaded part of slider */
-
-    if (self.downloadProgress > self.playbackProgress) {
-
-        // move ahead
-        CGContextMoveToPoint(context, lineWidth, yPosition);
-
-        // setting line color
-        CGContextSetStrokeColorWithColor(context, self.downloadedColor.CGColor);
-
-        // calculating line width for current downloaded position
-        lineWidth = self.downloadProgress * rectWidth;
-
-        // drawing line with calculated width
-        CGContextAddLineToPoint(context, lineWidth, yPosition);
-
-        // draw stroke
-        CGContextStrokePath(context);
-    }
-
-
-
-    /* Drawing not complete part of slider */
-
-    // setting line color
-    CGContextSetStrokeColorWithColor(context, self.notCompleteColor.CGColor);
-
-    // move ahead
-    CGContextMoveToPoint(context, lineWidth, yPosition);
-
-    // calculating line width for current downloaded position
-    lineWidth = rectWidth;
-
-    // drawing line with calculated width
-    CGContextAddLineToPoint(context, lineWidth, yPosition);
-
-    // draw stroke
-    CGContextStrokePath(context);
+    [self setNeedsLayout];
 }
 
 #pragma mark - Helpers

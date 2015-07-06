@@ -98,12 +98,16 @@
     [super layoutSubviews];
 
     self.notCompleteImageView.frame = self.bounds;
-    self.downloadedImageView.frame = self.bounds;
-    self.completeImageView.frame = self.bounds;
-
-    CGFloat currentWidth = CGRectGetWidth(self.bounds);
-    self.completeImageView.width = currentWidth * self.playbackProgress;
-    self.downloadedImageView.width = currentWidth * self.downloadProgress;
+    self.completeImageView.frame = (CGRect) {
+            .origin = CGPointZero,
+            .size.width = CGRectGetWidth(self.bounds) * self.playbackProgress,
+            .size.height = CGRectGetHeight(self.bounds)
+    };
+    self.downloadedImageView.frame = (CGRect) {
+            .origin = CGPointZero,
+            .size.width = CGRectGetWidth(self.bounds) * self.downloadProgress,
+            .size.height = CGRectGetHeight(self.bounds)
+    };
 }
 
 #pragma mark - Setup
