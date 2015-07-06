@@ -4,7 +4,6 @@
 //
 
 #import "VOXHistogramRenderingOperation.h"
-#import "macros_blocks.h"
 #import "VOXHistogramRenderingConfiguration.h"
 
 
@@ -63,7 +62,11 @@
     self.image = renderedImage;
 
     // call completion block with result
-    main_queue_block(self.completion, self.image);
+    if (self.completion) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.completion(self.image);
+        });
+    }
 }
 
 #pragma mark - Rendering

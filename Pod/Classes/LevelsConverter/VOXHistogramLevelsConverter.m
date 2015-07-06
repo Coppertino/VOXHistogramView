@@ -25,7 +25,6 @@
 // THE SOFTWARE.
 
 #import "VOXHistogramLevelsConverter.h"
-#import "macros_blocks.h"
 
 
 static NSUInteger const averagingWindow = 3;
@@ -48,11 +47,15 @@ static NSUInteger const averagingWindow = 3;
     NSUInteger samplesCount = [self.levels count];
 
     if (samplingRate == 0 || self.levels == nil) {
-        safe_block(completion, nil);
+        if (completion) {
+            completion(nil);
+        }
     }
 
     if (samplingRate == samplesCount) {
-        safe_block(completion, self.levels);
+        if (completion) {
+            completion(self.levels);
+        }
         return;
     }
 
@@ -82,7 +85,11 @@ static NSUInteger const averagingWindow = 3;
             }
         }
 
-        main_queue_block(completion, [result copy]);
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion([result copy]);
+            });
+        }
     });
 }
 

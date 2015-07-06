@@ -32,7 +32,6 @@
 #import "VOXHistogramLevelsConverter.h"
 #import "VOXHistogramAnimator.h"
 #import "UIView+Autolayout.h"
-#import "FrameAccessor.h"
 
 
 
@@ -298,7 +297,8 @@ static NSUInteger const VOXHistogramControlViewDefaultMarginWidth = 1;
     if (sender.state == UIGestureRecognizerStateBegan) {
         self.tracking = YES;
 
-        self.beganTrackingLocation = CGPointMake(self.playbackProgress * self.bounds.size.width, self.histogramView.bottom);
+        CGFloat histogramBottom = self.histogramView.frame.origin.y + self.histogramView.frame.size.height;
+        self.beganTrackingLocation = CGPointMake(self.playbackProgress * self.bounds.size.width, histogramBottom);
         self.realPositionValue = self.playbackProgress;
     }
     else if (sender.state == UIGestureRecognizerStateChanged) {

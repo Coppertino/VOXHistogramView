@@ -26,7 +26,6 @@
 
 
 #import "VOXHistogramView.h"
-#import "FrameAccessor.h"
 
 
 @interface VOXHistogramView ()

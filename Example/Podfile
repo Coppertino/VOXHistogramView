@@ -3,13 +3,10 @@ platform :ios, '7.1'
 source 'https://github.com/CocoaPods/Specs.git'
 
 inhibit_all_warnings!
-#use_frameworks!
 
 target 'VOXHistogramView_Example', :exclusive => true do
   pod "VOXHistogramView", :path => "../"
   pod 'APAudioPlayer'
-  pod 'macros_blocks'
-  pod 'FrameAccessor'
 end
 
 target 'VOXHistogramView_Tests', :exclusive => true do

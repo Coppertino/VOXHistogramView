@@ -12,6 +12,4 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
 
-  s.dependency 'macros_blocks', '0.0.3'
-  s.dependency 'FrameAccessor', '2.0'
 end
