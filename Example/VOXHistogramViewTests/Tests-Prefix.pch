@@ -2,6 +2,8 @@
 
 #ifdef __OBJC__
 
-  
+#import "Expecta.h"
+#import <UIKit/UIKit.h>
+#import <XCTest/XCTest.h>
 
 #endif

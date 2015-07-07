@@ -23,9 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <XCTest/XCTest.h>
 #import "VOXHistogramLevelsConverter.h"
-#import "Expecta.h"
 
 
 @interface VOXHistogramLevelsConverterTests : XCTestCase

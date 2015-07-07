@@ -26,7 +26,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VOXJSONConverter : NSObject
+@interface VOXJSONLoader : NSObject
 
 /**
  *  Reads data from local file and returns NSDictionary or NSArray object

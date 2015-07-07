@@ -1,5 +1,5 @@
 //
-//  Created by Nickolay Sheika on 02.06.15.
+// Created by Nickolay Sheika on 02.06.15.
 // Copyright (c) 2014 Coppertino Inc. All rights reserved. (http://coppertino.com/)
 //
 // VOX, VOX Player, LOOP for VOX are registered trademarks of Coppertino Inc in US.
@@ -29,7 +29,7 @@
 #import <VOXHistogramView/VOXHistogramRenderer.h>
 #import <VOXHistogramView/VOXHistogramLevelsConverter.h>
 #import "VOXSimpleHistogramViewController.h"
-#import "VOXJSONConverter.h"
+#import "VOXJSONLoader.h"
 #import "VOXPlayerWrapper.h"
 
 
@@ -81,7 +81,7 @@
     VOXHistogramRenderer *renderer = [VOXHistogramRenderer rendererWithRenderingConfiguration:renderingConfiguration];
 
     /* Load levels JSON */
-    NSArray *levels = [VOXJSONConverter jsonObjectWithFileName:@"levels.json"];
+    NSArray *levels = [VOXJSONLoader jsonObjectWithFileName:@"levels.json"];
 
     /* Setup levels converter */
     VOXHistogramLevelsConverter *converter = [VOXHistogramLevelsConverter new];

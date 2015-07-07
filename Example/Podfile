@@ -12,5 +12,6 @@ end
 target 'VOXHistogramView_Tests', :exclusive => true do
   pod "VOXHistogramView", :path => "../"
   pod 'Expecta'
+  pod 'Expecta+Snapshots'
   pod 'OCMock'
 end

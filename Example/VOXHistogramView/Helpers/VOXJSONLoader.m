@@ -24,9 +24,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "VOXJSONConverter.h"
+#import "VOXJSONLoader.h"
 
-@implementation VOXJSONConverter
+@implementation VOXJSONLoader
 
 + (id)jsonObjectWithFileName:(NSString *)fileName
 {

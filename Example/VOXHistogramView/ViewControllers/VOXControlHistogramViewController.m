@@ -25,7 +25,7 @@
 // THE SOFTWARE.
 
 #import "VOXControlHistogramViewController.h"
-#import "VOXJSONConverter.h"
+#import "VOXJSONLoader.h"
 #import "VOXPlayerWrapper.h"
 #import <VOXHistogramView/VOXHistogramControlView.h>
 
@@ -67,7 +67,7 @@
     [super viewDidAppear:animated];
 
     /* Load levels JSON */
-    NSArray *levels = [VOXJSONConverter jsonObjectWithFileName:@"levels.json"];
+    NSArray *levels = [VOXJSONLoader jsonObjectWithFileName:@"levels.json"];
     self.histogramControlView.levels = levels;
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"pink20silence20" ofType:@"mp3"];

@@ -18,7 +18,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		71697E8D1B3ED39A00A7EB6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71697E8C1B3ED39A00A7EB6E /* LaunchScreen.xib */; };
-		71FB0FDD1B3EC2D40034461C /* VOXJSONConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FB0FCE1B3EC2D40034461C /* VOXJSONConverter.m */; };
+		71FB0FDD1B3EC2D40034461C /* VOXJSONLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FB0FCE1B3EC2D40034461C /* VOXJSONLoader.m */; };
 		71FB0FDE1B3EC2D40034461C /* VOXPlayerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FB0FD01B3EC2D40034461C /* VOXPlayerWrapper.m */; };
 		71FB0FDF1B3EC2D40034461C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71FB0FD21B3EC2D40034461C /* Images.xcassets */; };
 		71FB0FE01B3EC2D40034461C /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 71FB0FD31B3EC2D40034461C /* levels.json */; };
@@ -28,7 +28,13 @@
 		71FB0FE41B3EC2D40034461C /* VOXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FB0FDB1B3EC2D40034461C /* VOXTableViewController.m */; };
 		71FB0FE61B3EC3820034461C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71FB0FE51B3EC3820034461C /* Main.storyboard */; };
 		8A66A2DED9E15CD279668F3F /* libPods-VOXHistogramView_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E7E76625358F6D7325A7D7 /* libPods-VOXHistogramView_Tests.a */; };
+		B65531BCBE25561BBA9E01A8 /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B6553EEADBC17FA8F6C81B05 /* UIImage+ImageWithColor.m */; };
+		B65534A7798C6FDC1E3496B9 /* playbackMoreThanDownloadProgress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B65535BBCEBDD5EC8004E6EC /* playbackMoreThanDownloadProgress@2x.png */; };
 		B65537312F6A0C928EB5209C /* VOXHistogramLevelsConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B655328032E130111FDADB72 /* VOXHistogramLevelsConverterTests.m */; };
+		B6553735B2421331DC58D976 /* VOXHistogramViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6553AAA103EB9E7E13C08CA /* VOXHistogramViewTests.m */; };
+		B655374F04CA3F73BADDEC00 /* startProgress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6553AFAC3625716697A7801 /* startProgress@2x.png */; };
+		B6553B00DA3B6309C250C321 /* defaultProgress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6553800E38A24151D4E633F /* defaultProgress@2x.png */; };
+		B6553EEF45F6EB84C7C27B89 /* fullProgress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6553D668C7B14F6CA4C4EA0 /* fullProgress@2x.png */; };
 		D6BDD3282FB05B2F15221A59 /* libPods-VOXHistogramView_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC04319ED8CB0971952728EB /* libPods-VOXHistogramView_Example.a */; };
 /* End PBXBuildFile section */
 
@@ -61,13 +67,13 @@
 		6003F59D195388D20070C39A /* VOXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOXAppDelegate.m; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* VOXHistogramView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VOXHistogramView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6004BC293FA95C142DA4FEB6 /* Pods-VOXHistogramView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOXHistogramView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VOXHistogramView_Tests/Pods-VOXHistogramView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71697E8C1B3ED39A00A7EB6E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		71FB0FCD1B3EC2D40034461C /* VOXJSONConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOXJSONConverter.h; sourceTree = "<group>"; };
-		71FB0FCE1B3EC2D40034461C /* VOXJSONConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOXJSONConverter.m; sourceTree = "<group>"; };
+		71FB0FCD1B3EC2D40034461C /* VOXJSONLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOXJSONLoader.h; sourceTree = "<group>"; };
+		71FB0FCE1B3EC2D40034461C /* VOXJSONLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOXJSONLoader.m; sourceTree = "<group>"; };
 		71FB0FCF1B3EC2D40034461C /* VOXPlayerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOXPlayerWrapper.h; sourceTree = "<group>"; };
 		71FB0FD01B3EC2D40034461C /* VOXPlayerWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOXPlayerWrapper.m; sourceTree = "<group>"; };
 		71FB0FD21B3EC2D40034461C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -83,6 +89,13 @@
 		94E7E76625358F6D7325A7D7 /* libPods-VOXHistogramView_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VOXHistogramView_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC04319ED8CB0971952728EB /* libPods-VOXHistogramView_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VOXHistogramView_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B655328032E130111FDADB72 /* VOXHistogramLevelsConverterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOXHistogramLevelsConverterTests.m; sourceTree = "<group>"; };
+		B65535BBCEBDD5EC8004E6EC /* playbackMoreThanDownloadProgress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbackMoreThanDownloadProgress@2x.png"; sourceTree = "<group>"; };
+		B6553800E38A24151D4E633F /* defaultProgress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultProgress@2x.png"; sourceTree = "<group>"; };
+		B6553AAA103EB9E7E13C08CA /* VOXHistogramViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOXHistogramViewTests.m; sourceTree = "<group>"; };
+		B6553AFAC3625716697A7801 /* startProgress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startProgress@2x.png"; sourceTree = "<group>"; };
+		B6553B9746B6F2B004AEB7FC /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		B6553D668C7B14F6CA4C4EA0 /* fullProgress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fullProgress@2x.png"; sourceTree = "<group>"; };
+		B6553EEADBC17FA8F6C81B05 /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +140,7 @@
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for VOXHistogramView */,
-				6003F5B5195388D20070C39A /* Tests */,
+				6003F5B5195388D20070C39A /* VOXHistogramViewTests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				59884C268B78AE84C894B56D /* Pods */,
@@ -183,13 +196,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6003F5B5195388D20070C39A /* Tests */ = {
+		6003F5B5195388D20070C39A /* VOXHistogramViewTests */ = {
 			isa = PBXGroup;
 			children = (
 				6003F5B6195388D20070C39A /* Supporting Files */,
 				B655328032E130111FDADB72 /* VOXHistogramLevelsConverterTests.m */,
+				B6553AAA103EB9E7E13C08CA /* VOXHistogramViewTests.m */,
+				B6553AA5D51AB57F4D49A9BD /* Categories */,
+				B6553F4A51B7956ED265CB2D /* ReferenceImages */,
 			);
-			path = Tests;
+			path = VOXHistogramViewTests;
 			sourceTree = "<group>";
 		};
 		6003F5B6195388D20070C39A /* Supporting Files */ = {
@@ -215,8 +231,8 @@
 		71FB0FCC1B3EC2D40034461C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				71FB0FCD1B3EC2D40034461C /* VOXJSONConverter.h */,
-				71FB0FCE1B3EC2D40034461C /* VOXJSONConverter.m */,
+				71FB0FCD1B3EC2D40034461C /* VOXJSONLoader.h */,
+				71FB0FCE1B3EC2D40034461C /* VOXJSONLoader.m */,
 				71FB0FCF1B3EC2D40034461C /* VOXPlayerWrapper.h */,
 				71FB0FD01B3EC2D40034461C /* VOXPlayerWrapper.m */,
 			);
@@ -244,6 +260,34 @@
 				71FB0FDB1B3EC2D40034461C /* VOXTableViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B655342BBF78845CF3F32D7C /* VOXHistogramViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6553D668C7B14F6CA4C4EA0 /* fullProgress@2x.png */,
+				B6553AFAC3625716697A7801 /* startProgress@2x.png */,
+				B6553800E38A24151D4E633F /* defaultProgress@2x.png */,
+				B65535BBCEBDD5EC8004E6EC /* playbackMoreThanDownloadProgress@2x.png */,
+			);
+			path = VOXHistogramViewTests;
+			sourceTree = "<group>";
+		};
+		B6553AA5D51AB57F4D49A9BD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B6553EEADBC17FA8F6C81B05 /* UIImage+ImageWithColor.m */,
+				B6553B9746B6F2B004AEB7FC /* UIImage+ImageWithColor.h */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B6553F4A51B7956ED265CB2D /* ReferenceImages */ = {
+			isa = PBXGroup;
+			children = (
+				B655342BBF78845CF3F32D7C /* VOXHistogramViewTests */,
+			);
+			path = ReferenceImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +385,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				B6553EEF45F6EB84C7C27B89 /* fullProgress@2x.png in Resources */,
+				B655374F04CA3F73BADDEC00 /* startProgress@2x.png in Resources */,
+				B6553B00DA3B6309C250C321 /* defaultProgress@2x.png in Resources */,
+				B65534A7798C6FDC1E3496B9 /* playbackMoreThanDownloadProgress@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71FB0FDE1B3EC2D40034461C /* VOXPlayerWrapper.m in Sources */,
-				71FB0FDD1B3EC2D40034461C /* VOXJSONConverter.m in Sources */,
+				71FB0FDD1B3EC2D40034461C /* VOXJSONLoader.m in Sources */,
 				6003F59E195388D20070C39A /* VOXAppDelegate.m in Sources */,
 				71FB0FE41B3EC2D40034461C /* VOXTableViewController.m in Sources */,
 				71FB0FE31B3EC2D40034461C /* VOXSimpleHistogramViewController.m in Sources */,
@@ -429,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65537312F6A0C928EB5209C /* VOXHistogramLevelsConverterTests.m in Sources */,
+				B6553735B2421331DC58D976 /* VOXHistogramViewTests.m in Sources */,
+				B65531BCBE25561BBA9E01A8 /* UIImage+ImageWithColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,12 +623,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_PREFIX_HEADER = "VOXHistogramViewTests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				INFOPLIST_FILE = "VOXHistogramViewTests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOXHistogramView_Example.app/VOXHistogramView_Example";
 				WRAPPER_EXTENSION = xctest;
@@ -596,8 +646,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				GCC_PREFIX_HEADER = "VOXHistogramViewTests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "VOXHistogramViewTests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOXHistogramView_Example.app/VOXHistogramView_Example";
 				WRAPPER_EXTENSION = xctest;
