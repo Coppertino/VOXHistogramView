@@ -9,9 +9,16 @@
 @import UIKit;
 #import "VOXAppDelegate.h"
 
+static bool isRunningTests()
+{
+    NSDictionary* environment = [[NSProcessInfo processInfo] environment];
+    NSString* injectBundle = environment[@"XCInjectBundle"];
+    return [[injectBundle pathExtension] isEqualToString:@"xctest"];
+}
+
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([VOXAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, isRunningTests() ? nil : NSStringFromClass([VOXAppDelegate class]));
     }
 }
